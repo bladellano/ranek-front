@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style>
+<style scopde>
 footer {
   top: 75px;
   background: #87f;

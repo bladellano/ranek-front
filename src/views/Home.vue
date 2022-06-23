@@ -1,15 +1,30 @@
 <template>
-  <div>
-    <h1>Home</h1>
-  </div>
+  <section>
+    <h1>👍 Compre ou Venda 👎</h1>
+    <ProdutosBuscar />
+    <ProdutosLista />
+  </section>
 </template>
 
 <script>
+import ProdutosBuscar from "@/components/ProdutosBuscar.vue";
+import ProdutosLista from "@/components/ProdutosLista.vue";
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Home",
+  components: {
+    ProdutosBuscar,
+    ProdutosLista,
+  },
 };
 </script>
 
-<style>
+<style scoped>
+h1 {
+  font-size: 2rem;
+  color: #87f;
+  margin-top: 40px;
+  text-align: center;
+}
 </style>
