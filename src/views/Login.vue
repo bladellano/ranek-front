@@ -33,7 +33,9 @@ export default {
   },
   methods: {
     logar() {
-      console.log("Logou...");
+      // this.$store.commit("UPDATE_LOGIN", true);
+      this.$store.dispatch("getUsuario", this.login.email);
+      this.$router.push({ name: "usuario" });
     },
   },
 };
