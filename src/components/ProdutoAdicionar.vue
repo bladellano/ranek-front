@@ -7,7 +7,7 @@
     <input type="number" name="preco" id="preco" v-model="produto.preco" />
 
     <label for="fotos">Fotos</label>
-    <input type="file" name="fotos" id="fotos" ref="fotos" />
+    <input type="file" name="fotos" id="fotos" multiple ref="fotos" />
 
     <label for="descricao">Descrição</label>
     <textarea
@@ -42,13 +42,27 @@ export default {
   },
   methods: {
     adicionarProduto() {
-      this.formatarProduto();
-      api.post("/produto", this.produto).then(() => {
+      const produto = this.formatarProduto();
+      api.post("/produto", produto).then(() => {
         this.$store.dispatch("getUsuarioProdutos");
       });
     },
     formatarProduto() {
-      this.produto.usuario_id = this.$store.state.usuario.email;
+      const form = new FormData();
+
+      const files = this.$refs.fotos.files;
+
+      for (let i = 0; i < files.length; i++) {
+        form.append(files[i].name, files[i]);
+      }
+
+      form.append("nome", this.produto.nome);
+      form.append("preco", this.produto.preco);
+      form.append("descricao", this.produto.descricao);
+      form.append("vendido", this.produto.vendido);
+      form.append("usuario_id", this.$store.state.usuario.id);
+
+      return form;
     },
   },
 };

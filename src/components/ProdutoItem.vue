@@ -9,7 +9,6 @@
         :src="produto.fotos[0].src"
         :alt="produto.fotos[0].titulo"
       />
-      Ver Produto
     </router-link>
 
     <div class="info">
@@ -34,6 +33,12 @@ export default {
   grid-gap: 20px;
   margin-bottom: 40px;
   position: relative;
+}
+@media screen and (max-width: 500px) {
+  .produto {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
 }
 .info {
   align-self: end;
