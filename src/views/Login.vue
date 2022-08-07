@@ -33,9 +33,10 @@ export default {
   },
   methods: {
     logar() {
-      // this.$store.commit("UPDATE_LOGIN", true);
-      this.$store.dispatch("getUsuario", this.login.email);
-      this.$router.push({ name: "usuario" });
+      this.$store.dispatch("logarUsuario", this.login).then(() => {
+        this.$store.dispatch("getUsuario");
+        this.$router.push({ name: "usuario" });
+      });
     },
   },
 };
