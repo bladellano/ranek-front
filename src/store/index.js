@@ -40,7 +40,7 @@ export default new Vuex.Store({
   },
   actions: {
     getUsuarioProdutos(context) {
-      api.get(`/produto?usuario_id=${context.state.usuario.id}`).then(res => {
+     return api.get(`/produto?usuario_id=${context.state.usuario.id}`).then(res => {
         context.commit('UPDATE_USUARIO_PRODUTOS', res.data)
       })
     },

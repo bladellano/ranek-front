@@ -1,7 +1,10 @@
 import axios from "axios";
 
+const url = "http://ranek-api.local.com/wp-json";
+// const url = "http://ranekapi.dellanosites.com.br/wp-json";
+
 const axiosInstance = axios.create({
-    baseURL: "http://ranek-api.local.com/wp-json/api"
+    baseURL: url + "/api"
 });
 
 axiosInstance.interceptors.request.use(
@@ -31,10 +34,10 @@ export const api = {
         return axiosInstance.delete(endpoint);
     },
     login(body) {
-        return axios.post(`http://ranek-api.local.com/wp-json/jwt-auth/v1/token`, body);
+        return axios.post(url + `/jwt-auth/v1/token`, body);
     },
     validateToken() {
-        return axiosInstance.post(`http://ranek-api.local.com/wp-json/jwt-auth/v1/token/validate`);
+        return axiosInstance.post(url + `/jwt-auth/v1/token/validate`);
     }
 
 }
