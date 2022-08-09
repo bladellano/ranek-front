@@ -20,5 +20,10 @@ yarn build
 yarn lint
 ```
 
+# Configuração para funcionamento em produção
+
+- FRONT: http://ranek.dellanosites.com.br/
+- API: http://ranekapi.dellanosites.com.br/
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
