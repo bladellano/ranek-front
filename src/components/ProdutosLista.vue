@@ -106,9 +106,11 @@ export default {
   position: relative;
   z-index: 1;
 }
-.produto img {
-  border-radius: 4px;
-  margin-bottom: 20px;
+.produto img[data-v-f12feaee] {
+	border-radius: 4px;
+	margin-bottom: 20px;
+	object-fit: contain;
+	height: 229px;
 }
 .titulo {
   margin-bottom: 10px;

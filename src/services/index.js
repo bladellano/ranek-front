@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const url = "http://ranek-api.local.com/wp-json";
-// const url = "http://ranekapi.dellanosites.com.br/wp-json";
+// const url = "http://ranek-api.local.com/wp-json";
+const url = "http://ranekapi.dellanosites.com.br/wp-json";
 
 const axiosInstance = axios.create({
     baseURL: url + "/api"
